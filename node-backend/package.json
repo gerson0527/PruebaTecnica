@@ -1,0 +1,28 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "description": "API médica migrada de Python a Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migrate": "node ./node_modules/typeorm/cli.js migration:run -d ./data-source.js",
+    "seed": "node src/scripts/seed.js",
+    "start": "npm run migrate && npm run seed && node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

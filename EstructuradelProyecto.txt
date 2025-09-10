@@ -1,0 +1,135 @@
+medical-system/
+├── docker-compose.yml
+├── .env.example
+├── .env                          # Copiar de .env.example
+├── .gitignore
+├── README.md
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── alembic.ini
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py              # FastAPI application
+│   │   ├── database.py          # Database connection
+│   │   ├── config.py            # Configuration settings
+│   │   │
+│   │   ├── models/              # SQLAlchemy models
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   ├── user.py
+│   │   │   ├── patient.py
+│   │   │   ├── encounter.py
+│   │   │   ├── observation.py
+│   │   │   ├── diagnosis.py     # Opcional
+│   │   │   ├── procedure.py     # Opcional
+│   │   │   ├── medication.py    # Opcional
+│   │   │   ├── allergy.py       # Opcional
+│   │   │   └── audit_log.py     # Opcional
+│   │   │
+│   │   ├── schemas/             # Pydantic schemas
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   ├── patient.py
+│   │   │   ├── encounter.py
+│   │   │   ├── observation.py
+│   │   │   └── auth.py
+│   │   │
+│   │   ├── routers/             # API endpoints
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py
+│   │   │   ├── patients.py
+│   │   │   ├── encounters.py
+│   │   │   └── observations.py
+│   │   │
+│   │   ├── services/            # Business logic
+│   │   │   ├── __init__.py
+│   │   │   ├── auth_service.py
+│   │   │   ├── patient_service.py
+│   │   │   ├── encounter_service.py
+│   │   │   └── observation_service.py
+│   │   │
+│   │   ├── utils/               # Utilities
+│   │   │   ├── __init__.py
+│   │   │   ├── security.py      # JWT, password hashing
+│   │   │   ├── dependencies.py  # FastAPI dependencies
+│   │   │   └── exceptions.py    # Custom exceptions
+│   │   │
+│   │   └── core/                # Core functionality
+│   │       ├── __init__.py
+│   │       └── security.py
+│   │
+│   ├── migrations/              # Alembic migrations
+│   │   └── versions/
+│   │
+│   ├── scripts/                 # Utility scripts
+│   │   ├── create_admin_user.py
+│   │   └── seed_data.py
+│   │
+│   └── tests/                   # Tests
+│       ├── __init__.py
+│       ├── conftest.py
+│       └── test_*.py
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── angular.json
+│   ├── tsconfig.json
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── app.component.ts
+│   │   │   ├── app.module.ts
+│   │   │   ├── app-routing.module.ts
+│   │   │   │
+│   │   │   ├── auth/             # Authentication module
+│   │   │   │   ├── auth.module.ts
+│   │   │   │   ├── login/
+│   │   │   │   ├── guards/
+│   │   │   │   └── interceptors/
+│   │   │   │
+│   │   │   ├── patients/         # Patients module
+│   │   │   │   ├── patients.module.ts
+│   │   │   │   ├── patient-list/
+│   │   │   │   ├── patient-detail/
+│   │   │   │   └── patient-form/
+│   │   │   │
+│   │   │   ├── encounters/       # Encounters module
+│   │   │   │   ├── encounters.module.ts
+│   │   │   │   ├── encounter-list/
+│   │   │   │   └── encounter-form/
+│   │   │   │
+│   │   │   ├── observations/     # Observations module
+│   │   │   │   ├── observations.module.ts
+│   │   │   │   ├── observation-list/
+│   │   │   │   └── observation-form/
+│   │   │   │
+│   │   │   ├── shared/           # Shared components
+│   │   │   │   ├── shared.module.ts
+│   │   │   │   ├── components/
+│   │   │   │   ├── directives/
+│   │   │   │   └── pipes/
+│   │   │   │
+│   │   │   └── core/             # Core services
+│   │   │       ├── core.module.ts
+│   │   │       ├── services/
+│   │   │       ├── models/
+│   │   │       └── interceptors/
+│   │   │
+│   │   ├── assets/
+│   │   ├── environments/
+│   │   └── styles/
+│   │
+│   └── e2e/                     # End-to-end tests
+│
+├── database/
+│   ├── init.sql                 # Initial database setup
+│   ├── schema.sql               # Database schema
+│   └── seed_data.sql            # Sample data
+│
+└── docs/                        # Documentation
+    ├── api.md
+    ├── deployment.md
+    └── architecture.md
