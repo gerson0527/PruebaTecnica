@@ -124,10 +124,7 @@ medical-system/
 │   │
 │   └── e2e/                     # End-to-end tests
 │
-├── database/
-│   ├── init.sql                 # Initial database setup
-│   ├── schema.sql               # Database schema
-│   └── seed_data.sql            # Sample data
+│
 │
 └── docs/                        # Documentation
     ├── api.md
